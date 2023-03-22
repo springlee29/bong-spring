@@ -12,6 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @SpringBootTest
 @Transactional
+
 class MemberServiceIntegrationTest {
    @Autowired
    MemberService memberService;
@@ -23,7 +24,7 @@ class MemberServiceIntegrationTest {
         //given
         Member member = new Member();
 
-        member.setName("hello2");
+        member.setName("hello");
         //when
         Long saveId = memberService.join(member);
         //then
@@ -38,7 +39,7 @@ class MemberServiceIntegrationTest {
         member1.setName("spring1");
 
         Member member2 = new Member();
-        member2.setName("spring1");
+        member2.setName("spring2");
 
         memberService.join(member1);
         IllegalStateException e = assertThrows(IllegalStateException.class, () -> memberService.join(member2));
