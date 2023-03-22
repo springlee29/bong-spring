@@ -1,6 +1,6 @@
 package hello.bongspring;
 
-import hello.bongspring.repository.JdbcMemberRepository;
+import hello.bongspring.repository.JdbcTemplateMemberRepository;
 import hello.bongspring.repository.MemberRepository;
 import hello.bongspring.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +28,7 @@ public class SpringConfig {
     @Bean
     public MemberRepository memberRepository(){
 
-        return new JdbcMemberRepository(dataSource);
+        return new JdbcTemplateMemberRepository(dataSource);
         //return new MemoryMemberRepository();
     }
 }
