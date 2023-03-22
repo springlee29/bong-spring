@@ -36,10 +36,10 @@ class MemberServiceIntegrationTest {
     @Test
     void dupleMember(){
         Member member1 = new Member();
-        member1.setName("spring1");
+        member1.setName("spring");
 
         Member member2 = new Member();
-        member2.setName("spring2");
+        member2.setName("123");
 
         memberService.join(member1);
         IllegalStateException e = assertThrows(IllegalStateException.class, () -> memberService.join(member2));
